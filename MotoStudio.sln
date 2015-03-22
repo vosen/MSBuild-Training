@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotoStudio", "MotoStudio\MotoStudio.csproj", "{8CF77A23-CB18-4F2C-B272-CAB4F6855FBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotoStudio.Tests", "MotoStudio.Tests\MotoStudio.Tests.csproj", "{5EA63D85-350C-43A2-A30D-00A305B97BB9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CF77A23-CB18-4F2C-B272-CAB4F6855FBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CF77A23-CB18-4F2C-B272-CAB4F6855FBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CF77A23-CB18-4F2C-B272-CAB4F6855FBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CF77A23-CB18-4F2C-B272-CAB4F6855FBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EA63D85-350C-43A2-A30D-00A305B97BB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EA63D85-350C-43A2-A30D-00A305B97BB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EA63D85-350C-43A2-A30D-00A305B97BB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EA63D85-350C-43A2-A30D-00A305B97BB9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
