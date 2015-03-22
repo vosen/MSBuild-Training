@@ -70,19 +70,13 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="ViewModel\ProjectViewModel.cs" />
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\Application.cs" />
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -122,16 +116,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="code.png" />
+    <Resource Include="Resources\code.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="folder.png" />
+    <Resource Include="Resources\folder.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="project.png" />
+    <Resource Include="Resources\project.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="BatwingsPaleBlue.ico" />
+    <Resource Include="Resources\BatwingsPaleBlue.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\start.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

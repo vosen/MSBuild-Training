@@ -1,0 +1,51 @@
+﻿<Window x:Class="MotoStudio.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MotoStudio" Height="350" Width="525"
+        Icon="/MotoStudio;component/Resources/BatwingsPaleBlue.ico"
+        UseLayoutRounding="True"
+        TextOptions.TextFormattingMode="Display">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <Menu.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="MenuItem">
+                        <Setter Property="Padding" Value="3,2,3,2"/>
+                    </Style>
+                </ResourceDictionary>
+            </Menu.Resources>
+            <MenuItem Header="Save" Command="ApplicationCommands.Save"/>
+            <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
+            <MenuItem Command="{Binding Start}" >
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/MotoStudio;component/Resources/start.png" Stretch="None" />
+                        <TextBlock>Start</TextBlock>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
+            <MenuItem Header="Clean" Command="{Binding Clean}"/>
+            <MenuItem Header="Build" Command="{Binding Build}"/>
+        </Menu>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="5"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBox FontFamily="Global Monospace">
+            
+            </TextBox>
+            <GridSplitter HorizontalAlignment="Stretch" Grid.Row="1"/>
+            <TextBox
+                Grid.Row="2"
+                FontFamily="Global Monospace"
+                IsReadOnly="True"
+                IsReadOnlyCaretVisible="True"
+                VerticalScrollBarVisibility="Auto"
+                HorizontalScrollBarVisibility="Auto"
+                Text="{Binding Output}"/>
+        </Grid>
+    </DockPanel>
+</Window>
