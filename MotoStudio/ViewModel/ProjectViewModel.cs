@@ -20,6 +20,9 @@ namespace MotoStudio.ViewModel
         public RelayCommand Clean { get; private set; }
         public RelayCommand Build { get; private set; }
 
+        public IList<ITreeItem> Items { get { return proj.Items; } }
+        public string Name { get { return proj.Name; } }
+
         private string output;
         public string Output
         {
