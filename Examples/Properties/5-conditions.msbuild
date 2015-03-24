@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Typical example of execution driven by conditions.
+    Execute it with and without passing a value for $(ErrorMessage)
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="Build">
+    <PropertyGroup>
+      <Error Condition="'$(ErrorMessage)'!=''">true</Error>
+      <Error Condition="'$(ErrorMessage)'==''">false</Error>
+    </PropertyGroup>
+    <Message Condition="'$(Error)'=='true'" Text="CRITICAL FAILURE. EVACUATE THE SHIP."/>
+  </Target>
+</Project>

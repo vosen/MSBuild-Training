@@ -15,10 +15,12 @@ It's unlikely to be very interesting to you if you didn't attend the talk.
 3. Properties
   1. Imports & evaluation order
   2. Properties dictionary
-    * Grouping and conditions
   3. Special properties
     * Globals (immutable)
     * Enviromental
+  4. Conditions
+4. Items
+5. Targets & Tasks
 
 # Links
 
@@ -33,3 +35,6 @@ It's unlikely to be very interesting to you if you didn't attend the talk.
 ## Custom tasks
 * [MSBuild Community Tasks](https://github.com/loresoft/msbuildtasks)
 * [MSBuild Extension Pack](http://www.msbuildextensionpack.com/)
+
+## Extra
+* [MSBuild property functions](http://blogs.msdn.com/b/visualstudio/archive/2010/04/02/msbuild-property-functions.aspx)

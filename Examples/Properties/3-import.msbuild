@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  An msbuild project that includes some stuff.
+  Reorder and notice how it affects the value of $(Debug)
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Debug>false</Debug>
+    </PropertyGroup>
+    <Import Project="2-simple.msbuild"/>
+</Project>
