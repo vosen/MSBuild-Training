@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This shows difference between two methods of retrieving values of items.
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Source Include="hello">
+      <Path>hello.cs</Path>
+    </Source>
+    <Source Include="moto">
+      <Path>moto.cs</Path>
+    </Source>
+  </ItemGroup>
+  <Target Name="Compile">
+    <Message Text="%40(Source->'%25(Path)') is @(Source->'%(Path)')"/>
+    <Message Text="%25(Source.Path) is %(Source.Path)"/>
+  </Target>
+</Project>

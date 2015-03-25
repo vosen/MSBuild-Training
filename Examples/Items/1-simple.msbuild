@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  A very simple msbuild with just two items
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Include = "file1.cs"/>
+    <Compile Include = "file2.cs"/>
+  </ItemGroup>
+</Project>

@@ -3,10 +3,10 @@
   A very simple msbuild project with a single property and a single target
 -->
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <PropertyGroup>
-        <Debug>true</Debug>
-    </PropertyGroup>
-    <Target Name="Build">
-        <Message Text="The value of 'Debug' property is $(Debug)"/>
-    </Target>
+  <PropertyGroup>
+    <Debug>true</Debug>
+  </PropertyGroup>
+  <Target Name="Build">
+    <Message Text="The value of 'Debug' property is $(Debug)"/>
+  </Target>
 </Project>

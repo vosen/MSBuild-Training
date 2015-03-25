@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This is equivalent to 2-grouping.msbuild
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Source Include = "hello.cs;moto.cs"/>
+  </ItemGroup>
+  <Target Name="Compile">
+    <Message Text="Scalar value for Source group is @(Source)"/>
+    <CSC Sources="@(Source)"/>
+  </Target>
+</Project>

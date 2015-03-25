@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <PathRoot>C:</PathRoot>
+    </PropertyGroup>
+    <ItemGroup>
+        <Source Include="hello">
+            <Path>hello.cs</Path>
+            <PathRoot>$(PathRoot)</PathRoot>
+        </Source>
+        <Source Include="moto">
+            <Path>moto.cs</Path>
+            <PathRoot>$(PathRoot)</PathRoot>
+        </Source>
+    </ItemGroup>
+    <Target Name="Compile">
+        <Message Text="Simple transform: @(Source->'%(Path)')"/>
+        <Message Text="Slightly complicated transform: @(Source->'%(PathRoot)\arbitrary\path\%(Path)')"/>
+    </Target>
+</Project>

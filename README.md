@@ -20,13 +20,23 @@ It's unlikely to be very interesting to you if you didn't attend the talk.
     * Enviromental
   4. Conditions
 4. Items
+  1. Grouping
+  2. Metadata
+  3. Scalar-vector duality
+  4. Vectors again
 5. Targets & Tasks
+  1. Demo
+6. Demo
+7. Extra
+  1. Differences between AfterBuild target and custom tasks
+  2. True order of MSBuild evaluation
+  3. Item transforms
 
 # Links
 
 ## Documentation
+* [MSBuild reference](https://msdn.microsoft.com/en-us/library/0k6kkbsd.aspx)
 * [MSBuild file schema](https://msdn.microsoft.com/en-us/library/5dy88c2e.aspx)
-* [MSBuild conditions](https://msdn.microsoft.com/en-us/library/7szfhaft.aspx)
 
 ## Tooling
 * [MSBuild Exlorer](http://www.msbuildexplorer.com/)
@@ -38,3 +48,5 @@ It's unlikely to be very interesting to you if you didn't attend the talk.
 
 ## Extra
 * [MSBuild property functions](http://blogs.msdn.com/b/visualstudio/archive/2010/04/02/msbuild-property-functions.aspx)
+* [Side effects of defining Properties inside Targets (paragraph "Subtle Effects of the Evaluation Order")](https://msdn.microsoft.com/en-us/library/dd997067.aspx)
+* [Convert .sln to .msbuild](http://stackoverflow.com/a/3888083)
