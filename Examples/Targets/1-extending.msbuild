@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="common.msbuild"/>
+  <Target Name="DoSomething" BeforeTargets="Compile">
+    <Message Text="Executing DoSomething target"/>
+  </Target>
+  <Target Name="DoSomethingElse" AfterTargets="Compile">
+    <Message Text="Executing DoSomethingElse target"/>
+  </Target>
+</Project>

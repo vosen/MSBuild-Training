@@ -25,7 +25,8 @@ It's unlikely to be very interesting to you if you didn't attend the talk.
   3. Scalar-vector duality
   4. Vectors again
 5. Targets & Tasks
-  1. Demo
+  1. Extending targets
+  2. Authoring tasks
 6. Demo
 7. Extra
   1. Differences between AfterBuild target and custom tasks
