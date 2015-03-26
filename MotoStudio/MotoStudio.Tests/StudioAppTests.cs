@@ -119,10 +119,10 @@ namespace MotoStudio.Tests
                 Assert.AreEqual(1, app.Project.Items.Count);
                 ITreeItem folder = null;
                 Assert.DoesNotThrow(() => folder = app.Project.Items.Single(i => i.Name == "folder"));
-                Assert.IsFalse(folder.IsFile);
+                Assert.True(folder.IsFolder);
                 Assert.AreEqual(1, folder.Items.Count);
                 Assert.AreEqual("src.cs", folder.Items[0].Name);
-                Assert.True(folder.Items[0].IsFile);
+                Assert.False(folder.Items[0].IsFolder);
             }
         }
 
@@ -136,12 +136,12 @@ namespace MotoStudio.Tests
                 Assert.AreEqual(1, app.Project.Items.Count);
                 ITreeItem folder = null;
                 Assert.DoesNotThrow(() => folder = app.Project.Items.Single(i => i.Name == "folder"));
-                Assert.IsFalse(folder.IsFile);
+                Assert.True(folder.IsFolder);
                 Assert.AreEqual(1, folder.Items.Count);
                 Assert.AreEqual("subfolder", folder.Items[0].Name);
-                Assert.False(folder.Items[0].IsFile);
+                Assert.True(folder.Items[0].IsFolder);
                 Assert.AreEqual("src.cs", folder.Items[0].Items[0].Name);
-                Assert.True(folder.Items[0].Items[0].IsFile);
+                Assert.False(folder.Items[0].Items[0].IsFolder);
             }
         }
 

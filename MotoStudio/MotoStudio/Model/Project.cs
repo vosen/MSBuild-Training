@@ -14,6 +14,8 @@ namespace MotoStudio.Model
     public class Project : ITreeItem
     {
         private readonly MsProject proj;
+
+        public MsProject MsProject { get { return proj; } }
         public string Name { get { return Path.GetFileNameWithoutExtension(proj.FullPath); } }
         public IList<ITreeItem> Items { get; private set; }
 
@@ -32,7 +34,7 @@ namespace MotoStudio.Model
         {
             ITreeItem subRoot = item.Items.FirstOrDefault(i => segments[0] == i.Name);
             if (subRoot == null)
-                item.Items.Add(new Item(segments, isFile));
+                item.Items.Add(new Item(item, segments, isFile));
             else
                 AddSubitem(subRoot, isFile, segments.Skip(1).ToArray());
         }
@@ -67,9 +69,15 @@ namespace MotoStudio.Model
             return BuildTarget("Clean");
         }
 
-        public bool IsFile
+        public bool IsFolder
         {
             get { return false; }
+        }
+
+
+        public ITreeItem Parent
+        {
+            get { return null; }
         }
     }
 }

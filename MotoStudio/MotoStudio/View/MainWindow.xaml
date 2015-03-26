@@ -9,6 +9,13 @@
     <Window.Resources>
         <this:SingletonConverter x:Key="SingletonConverter"/>
     </Window.Resources>
+    <Window.CommandBindings>
+
+        <CommandBinding
+                            Command="ApplicationCommands.Save"
+                            Executed="SaveExecuted"
+                            CanExecute="SaveCanExecute"/>
+    </Window.CommandBindings>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <Menu.Resources>
@@ -19,15 +26,6 @@
                 </ResourceDictionary>
             </Menu.Resources>
             <MenuItem Header="Save" Command="ApplicationCommands.Save"/>
-            <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
-            <MenuItem Command="{Binding Start}" >
-                <MenuItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/MotoStudio;component/Resources/start.png" Stretch="None" />
-                        <TextBlock VerticalAlignment="Bottom">Start</TextBlock>
-                    </StackPanel>
-                </MenuItem.Header>
-            </MenuItem>
             <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
             <MenuItem Header="Clean" Command="{Binding Clean}"/>
             <MenuItem Header="Build" Command="{Binding Build}"/>
@@ -44,9 +42,14 @@
                     <RowDefinition Height="5"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBox FontFamily="Global Monospace">
-            
-                </TextBox>
+                <TextBox
+                    x:Name="CodeBox"
+                    FontFamily="Global Monospace"
+                    VerticalScrollBarVisibility="Auto"
+                    HorizontalScrollBarVisibility="Auto"
+                    AcceptsReturn="True"
+                    AcceptsTab="True"
+                    Text="{Binding SelectedBuffer, Mode=TwoWay}"/>
                 <GridSplitter HorizontalAlignment="Stretch" Grid.Row="1"/>
                 <TextBox
                     Grid.Row="2"
@@ -55,12 +58,13 @@
                     IsReadOnlyCaretVisible="True"
                     VerticalScrollBarVisibility="Auto"
                     HorizontalScrollBarVisibility="Auto"
-                    Text="{Binding Output}"/>
+                    Text="{Binding Output, Mode=OneWay}"/>
             </Grid>
             <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
             <TreeView 
                 Grid.Column="2"
-                ItemsSource="{Binding Converter={StaticResource SingletonConverter}}">
+                ItemsSource="{Binding Converter={StaticResource SingletonConverter}}"
+                SelectedItemChanged="OnSelectedItemChanged">
                 <TreeView.Resources>
                     <HierarchicalDataTemplate x:Key="ProjectTemplate" ItemsSource="{Binding Items}">
                         <StackPanel Orientation="Horizontal">

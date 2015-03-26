@@ -1,4 +1,4 @@
-﻿using MotoStudio.Model;
+using MotoStudio.Model;
 using MotoStudio.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -21,7 +21,7 @@ namespace MotoStudio.View
             var root = item as ProjectViewModel;
             if(root != null)
                 return Project;
-            if(!((ITreeItem)item).IsFile)
+            if(((ITreeItem)item).IsFolder)
                 return Folder;
             return File;
         }

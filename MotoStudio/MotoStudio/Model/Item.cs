@@ -14,17 +14,25 @@ namespace MotoStudio.Model
 
         public IList<ITreeItem> Items { get; private set; }
 
-        public Item(string[] segments, bool isFile)
+        public Item(ITreeItem parent, string[] segments, bool isFile)
         {
+            Parent = parent;
             Items = new List<ITreeItem>();
             this.name = segments[0];
             if (segments.Length > 1)
-                this.Items.Add(new Item(segments.Skip(1).ToArray(), isFile));
+                this.Items.Add(new Item(this, segments.Skip(1).ToArray(), isFile));
             else
-                this.IsFile = isFile;
+                this.IsFolder = !isFile;
         }
 
         public string Name { get { return name; } }
-        public bool IsFile { get; private set; }
+        private bool folder = true;
+        public bool IsFolder { get { return folder; } private set { folder = value; } }
+
+
+        public ITreeItem Parent
+        {
+            get; private set;
+        }
     }
 }

@@ -9,6 +9,7 @@ namespace MotoStudio.Model
     {
         IList<ITreeItem> Items { get; }
         string Name { get; }
-        bool IsFile { get; }
+        bool IsFolder { get; }
+        ITreeItem Parent { get; }
     }
 }
