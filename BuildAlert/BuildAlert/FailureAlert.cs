@@ -10,7 +10,8 @@ namespace BuildAlert
     {
         public override bool Execute()
         {
-            Background.Set(@"D:\Users\vosen\Documents\Visual Studio 2013\Projects\MotoStudio\Examples\Targets\fail.png");
+            string failPath = Resources.ExtractToTemporaryPath("fail.png");
+            Background.Set(failPath);
             return true;
         }
     }
