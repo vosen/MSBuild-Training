@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <ItemGroup>
+    <Source Include = "hello.cs"/>
+    <Source Include = "moto.cs"/>
+  </ItemGroup>
+  <Target Name="Compile">
+    <Csc Sources="@(Source)"/>
+    <OnError ExecuteTargets="ErrorAlert" />
+  </Target>
   <UsingTask
     AssemblyFile="BuildAlert.dll"
     TaskName="FailureAlert"/>
-  <Target Name="Compile">
+  <Target Name="ErrorAlert">
     <FailureAlert/>
   </Target>
 </Project>
