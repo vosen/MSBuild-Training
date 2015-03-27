@@ -10,7 +10,7 @@ namespace BuildAlert
     {
         public override bool Execute()
         {
-            string failPath = Resources.ExtractToTemporaryPath("fail.png");
+            string failPath = Resources.ExtractToTemporaryPath("fail.bmp");
             Background.Set(failPath);
             return true;
         }

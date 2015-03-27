@@ -12,7 +12,7 @@ namespace BuildAlert
     {
         public static string ExtractToTemporaryPath(string path)
         {
-            string tempPath = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName()+".png");
+            string tempPath = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName()+".bmp");
             Assembly a = Assembly.GetExecutingAssembly();
             using(Stream s = a.GetManifestResourceStream("BuildAlert." + path))
             {
